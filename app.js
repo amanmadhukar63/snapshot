@@ -1,23 +1,28 @@
-// const express = require('express')
-var express=require('express')
-const bodyParser = require('body-parser');
+const express = require('express');
 const app = express();
-const port = 3000
+const bodyParser = require('body-parser');
+const path = require('path');
+const port = 3000;
+// const mongoose = require('mongoose');
+// const url=require('./secrets');
 
-// app.use((req,res,next)=>{
-//     // res.send("hello from appUse");
-//     next();
-// })
+
+// mongoose.connect(url);
+
+app.set('view engine', 'ejs');
+
+app.set('views', path.join(__dirname, 'views'));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname+'/public/index.html');
+  res.render('index');
 });
 
 app.get('/login', (req, res) => {
-  res.sendFile(__dirname+'/public/Login/login.html');
+  res.render('login');
 });
 
 app.get('/logout', (req, res) => {
@@ -25,7 +30,7 @@ app.get('/logout', (req, res) => {
 });
 
 app.get('/signup', (req, res) => {
-  res.sendFile(__dirname+'/public/Signup/signup.html');
+  res.render('signup');
 });
 
 app.post('/signup',(req,res)=>{

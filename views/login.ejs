@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/Signup/Signup.css" >
+    <link rel="stylesheet" href="/stylesheets/login.css" >
 </head>
 
 <body>
@@ -14,20 +14,14 @@
             <!--pinterest logo-->
             <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo"
                 class="img1" />
-            <p class="header">Sign Up to get started</p>
+            <p class="header">Log in to see more</p>
 
-            <form action="/signup" method="POST">
-                <label for="username"></label>
-                <input type="text" placeholder="Username" class="detail" id="username" /><br />
-                <label for="email"></label>
-                <input type="email" placeholder="Email" class="detail" id="email" /><br />
-                <label for="password"></label>
-                <input type="password" placeholder="Password" class="detail" id="password" />
-                <h4>Forgot your password?</h4>
-    
-                <input type="submit" class="btn int">Sign Up</input>
-            </form>
+            <input type="email" placeholder="Email" class="detail" /><br />
+            <input type="password" placeholder="Password" class="detail" />
 
+            <h4>Forgot your password?</h4>
+
+            <button class="btn int">Log in</button>
             <!-- <p class="or">OR</p>
             <button class="btn fbk">
                 <i class="fab fa-facebook fa-lg" style="color: white; padding-right: 10px"></i><a href="#">Continue with
@@ -39,7 +33,7 @@
 
             <footer>
                 <br />
-                <a href="/login">Already have an account? Log in</a>
+                <a href="/signup">Not on Pinterest yet? Sign up</a>
             </footer>
         </div>
     </div>
