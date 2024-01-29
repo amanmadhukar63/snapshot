@@ -3,11 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 const port = 3000;
-// const mongoose = require('mongoose');
-// const url=require('./secrets');
-
-
-// mongoose.connect(url);
+const userModel=require('./routes/user');
 
 app.set('view engine', 'ejs');
 
@@ -33,9 +29,13 @@ app.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-app.post('/signup',(req,res)=>{
-  console.log(req.body);
-  res.send("done");
+app.post('/signup',async (req,res)=>{
+  const userCreated= await userModel.create({
+    username:req.body.username,
+    email:req.body.email,
+    password:req.body.password
+  });
+  res.send(userCreated);
 })
 
 app.listen(port, () => {
